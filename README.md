@@ -16,7 +16,8 @@ Repo created on 21. Jun. 2019.
 
 Release
 --------
-This section mainly describes the naming of the released ISO image.  
+[Link to Releases](https://github.com/codesforu/slackware64-current-iso/releases)
+The rest of this section mainly describes the naming of the released ISO image.  
 
 Normally it will look like this:  
 
