@@ -1,5 +1,13 @@
 slackware64-current-iso
 ======
+
+No bullshit
+--------
+Link to download the latest release:  
+[RELEASE: 20190619-4.19.52](https://github.com/codesforu/slackware64-current-iso/releases/tag/20190619-4.19.52)
+
+Overview
+--------
 This repository  **irrgularly** updates and releases ISO installation image for  slackware64-current branch. Although this branch is not tagged stable, it is stable enough to fit general usage.  
 If you want me to update it on demand, you can open an issue or sponsor me a with server to make it automatic. The best way is to do it yourself, just read the DIY section below.  
 The main reason and purpose for this repository to exist is because the latest Slackware release (14.2) uses an out-dated Linux kernel (4.4.14) which can hardly boot on new Intel CPUs (since 7th or 8th, not sure for which generation exactly), and I want to install Slackware on a computer with an 8th Intel CPU while Slackware has a current branch without official installation ISO image.
