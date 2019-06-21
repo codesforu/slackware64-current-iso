@@ -1,9 +1,9 @@
 slackware64-current-iso
 ======
 
-**[NO BULLSHIT, TAKE ME THERE!][2]**  
+**[NO BULLSHIT, TAKE ME THERE!][https://github.com/codesforu/slackware64-current-iso/releases]**  
 Link to download the latest release:  
-[RELEASE: 20190619-4.19.52][2]
+[RELEASE: 20190619-4.19.52](https://github.com/codesforu/slackware64-current-iso/releases/tag/20190619-4.19.52)  
 
 Overview
 --------
@@ -15,9 +15,7 @@ Repo created on 21. Jun. 2019.
 
 Release
 --------
-**[Link to RELEASEs][1]**
-[1]:https://github.com/codesforu/slackware64-current-iso/releases
-[2]:https://github.com/codesforu/slackware64-current-iso/releases/tag/20190619-4.19.52
+**[Link to RELEASEs](https://github.com/codesforu/slackware64-current-iso/releases)**  
 The rest of this section mainly describes the naming of the released ISO image.  
 
 Normally it will look like this:  
