@@ -17,11 +17,13 @@ Repo created on 21. Jun. 2019.
 Release
 --------
 This section mainly describes the naming of the released ISO image.  
+
 Normally it will look like this:  
 
 > slackware64-current-yyyymmdd-x.y.z-install-dvd.iso  
 
 where "yyyymmdd" represents the date of generating, and "x.y.z" represents the version of Linux kernel.  
+
 And there will also be a checksum file:  
 
 > slackware64-current-yyyymmdd-x.y.z-install-dvd.iso.md5  
