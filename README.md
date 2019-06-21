@@ -1,8 +1,7 @@
 slackware64-current-iso
 ======
 
-No bullshit
---------
+**NO BULLSHIT**
 Link to download the latest release:  
 [RELEASE: 20190619-4.19.52](https://github.com/codesforu/slackware64-current-iso/releases/tag/20190619-4.19.52)
 
