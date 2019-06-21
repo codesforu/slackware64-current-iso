@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0041)https://mirrors.slackware.com/guidelines/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="expires" content="0">
+	<meta name="language" content="en-us">
+	<meta name="keywords" content="Slackware, mirrors, slackware.com, mirror">
+	<meta name="abstract" content="Slackware mirrors">
+	<meta name="author" content="Robby Workman">
+	<meta name="contact" content="rworkman@slackware.com">
+	<meta name="generator" content="vi">
+	<link rel="stylesheet" type="text/css" href="./Mirroring Guidelines_files/mirror.css">
+
+	<title>Mirroring Guidelines</title>
+
+</head>
+
+<body class="list">
+
+<p>
+Greetings,
+</p>
+
+<p>
+Thank you for your willingness to provide a Slackware mirror.  In order to
+make the experience as nice as possible for everyone involved (you, us, and
+our users), here's what we need from you:
+</p>
+
+<ol>
+
+	<li> http address of your mirror</li>
+
+		<ul>
+			<br>
+
+			<li> we've not required http access before, but that's 
+				what mirrorbrain uses (and frankly, it is more 
+				popular than ftp these days), so we'll need an 
+				http link.</li>
+			<li> https is fine too, and many users prefer it these
+				days, but make sure it's configured correctly!
+				</li>
+		</ul>
+
+	<br>
+
+	<li> ftp address of your mirror</li>
+
+		<ul>
+			<br>
+
+			<li>if you'd prefer to not provide an ftp mirror, that's
+				okay - just put "none" for this</li>
+		</ul>
+
+	<br>
+
+	<li>rsync address of your mirror</li>
+
+		<ul>
+
+			<br>
+
+			<li>mirrorbrain will periodically scan the file tree 
+				exposed via rsync and use that information to 
+				determine if a) your mirror is online, and b) 
+				if your mirror actually has the file that a 
+				user has requested, and if both a) and b) are 
+				true, then users can be redirected to your mirror.</li>
+
+			<br>
+
+			<li>If you do not want the general public accessing 
+				your rsync server, then you need to whitelist 
+				this ip address block (<tt>207.223.116.208/29</tt> - connections may come from <tt>.211</tt> or <tt>.213</tt>) via
+				iptables or some such.  Please note that the
+				rsync url *will* be published, so any restrictions 
+				to the general public will have to be on your end.</li>
+		</ul>
+
+	<br>
+
+	<li>an email address that we can use to contact you</li>
+
+		<ul>
+
+			<br>
+
+			<li>an alias like "<tt>mirror@</tt>" or "<tt>ftp@</tt>" is better than 
+				a single person's address; people tend to 
+				leave for new employment, die, and so on, and 
+				then we get bounce messages for nonexistent 
+				addresses...   A
+				<a href="https://en.wikipedia.org/wiki/Bus_factor">
+				bus number</a> greater than 1 is better ;-)
+		</li></ul>
+ 
+	<br>
+
+</ol>
+
+<p>
+The previous mirrors admin had some sort of hierarchy worked out with 
+respect to which mirrors were considered "primary" (and thus were okay
+for other mirrors to use for syncing), but I have been unable to find
+any documentation of that hierarchy.  Therefore, this is the best I can
+do at the moment: You can use our primary mirror <tt>rsync://ftp.slackware.com/slackware/</tt> 
+(which is actually OSUOSL), but the ISO images aren't present there
+(and this is not something within my control), so here are some good
+options to use as your upstream (but check the <a href="https://mirrors.slackware.com/mirrorlist/">Mirror List</a> 
+for some other potential options): <br><br>
+
+&nbsp;&nbsp;<tt>rsync://mirrors.kernel.org/slackware/ (US) </tt> <br>
+&nbsp;&nbsp;<tt>rsync://mirror.slackbuilds.org/slackware/ (US) </tt> <br>
+&nbsp;&nbsp;<tt>rsync://slackware.cs.utah.edu/slackware/ (US) </tt> <br>
+&nbsp;&nbsp;<tt>rsync://rsync.lug.udel.edu/slackware/ (US) </tt> <br>
+&nbsp;&nbsp;<tt>rsync://slackware.uk/slackware/ (UK) </tt> <br>
+</p>
+
+<p>
+Your mirror should use the same base directory structure:  http://yourmirror.org/slackware/... 
+e.g. if you want to mirror everything we have, then you'd do this: 
+<br>
+<br>
+    &nbsp;&nbsp;&nbsp;<tt>rsync -havP \<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --delete --delete-after \<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --no-o --no-g --safe-links \<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; --timeout=60 --contimeout=30 \ <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rsync://your-upstream-mirror/slackware/ \<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /your-toplevel-pub/slackware/</tt>
+</p>
+
+<p>
+If you don't want to mirror the entire tree (a full tree with all publicly
+available previous versions of Slackware is ~200GB), then you can use rsync's 
+"<tt>--exclude</tt>" option to exclude some parts.  As an example, if you do 
+not want the <tt>/slackware/slackware-3.0/</tt> directory mirrored, you 
+would use this as an argument to rsync:  
+<br>
+<br>
+  "<tt>--exclude "slackware-3.0/"</tt>"
+<br>
+<br>
+The <tt>--exclude</tt> argument can be used multiple times, or you can put excludes in 
+a file and then use that file as the argument - see <tt>rsync(1)</tt> for more info.
+</p>
+
+<p>
+We do ask that you mirror at least the latest stable release (both 32 and 
+64 bit arch) and the -current development tree (both 32 and 64 bit arch).
+</p>
+
+<p>
+We also ask that you not place anything else inside the top slackware/
+directory (e.g. unofficial package sets, slackbuilds.org scripts, and other 
+things not on <tt>mirrors.slackware.com</tt> - this creates confusion about 
+what is ours and what isn't.
+</p>
+
+<p>
+If your webserver is running apache httpd, consider including both 
+<tt>NameWidth=*</tt> and <tt>DescriptionWidth=*</tt> in <tt>IndexOptions</tt>.
+You'll probably also want something along these lines:
+</p><pre>        AddType text/plain .sh
+        AddType text/plain .diff
+        AddType text/plain .meta
+        AddType text/plain .sign
+        AddType text/plain .asc
+        AddType text/plain .md5
+
+        &lt;Files *.tgz.asc&gt;
+            RemoveEncoding .tgz
+        &lt;/Files&gt;
+        
+        &lt;Files *.tgz.md5&gt;
+            RemoveEncoding .tgz
+        &lt;/Files&gt;
+</pre>
+<p></p>
+
+
+<p>
+Responses, feedback, and questions go to <tt>mirrors@slackware.com</tt> - thanks!
+</p>
+
+
+
+</body></html>
