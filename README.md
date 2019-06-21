@@ -14,6 +14,17 @@ The main reason and purpose for this repository to exist is because the latest S
 Repo created on 21. Jun. 2019.
 
 
+Release
+--------
+This section mainly describes the naming of the released ISO image.  
+Normally it will look like this:  
+slackware64-current-yyyymmdd-x.y.z-install-dvd.iso  
+where "yyyymmdd" represents the date of generating, and "x.y.z" represents the version of Linux kernel.  
+And there will also be a checksum file : 
+slackware64-current-yyyymmdd-x.y.z-install-dvd.iso.md5  
+which contains the MD5 checksum of the generated ISO image.  
+Since github has a limit of 2GB for a single file in a release, and the size of a regular ISO installation image since Slackware 14.2 is around 3GB,the install iso is archived and splited into the size of a CD (700MB) in zip format.
+
 DIY
 --------
 
