@@ -1,10 +1,12 @@
 slackware64-current-iso
 ======
 
+
 **[NO BULLSHIT, TAKE ME THERE!](https://github.com/codesforu/slackware64-current-iso/releases)**  
 
 Link to download the latest release:  
 [RELEASE: 20190619-4.19.52](https://github.com/codesforu/slackware64-current-iso/releases/tag/20190619-4.19.52)  
+
 
 Overview
 --------
@@ -33,7 +35,14 @@ which contains the MD5 checksum of the generated ISO image.
 
 Since github has a limit of 2GB for a single file in a release, and the size of a regular ISO installation image since Slackware 14.2 is around 3GB, the install iso is archived and splited into the size of a CD (700MB) in zip format.
 
+
 DIY
 --------
 
 To generate the ISO image by yourself,  shell scripts are also released. Original method is provided by Patrick Volkerding, the creator of Slackware. Modification might be needed depending on your host.  Both x86_32 and x86_64 version could be generated with these scripts, and you can try on other releases as well.
+
+
+Licence
+--------
+
+All new codes are licenced to the public under the terms of  the GNU General Public Licence, version 3. Softwares from other resources may remain under their own licence.
