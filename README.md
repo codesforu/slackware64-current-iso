@@ -33,7 +33,7 @@ And there will also be a checksum file:
 
 which contains the MD5 checksum of the generated ISO image.  
 
-Since github has a limit of 2GB for a single file in a release, and the size of a regular ISO installation image since Slackware 14.2 is around 3GB, the install iso is archived and splited into the size of a CD (700MB) in zip format.
+Since github has a volume limit of 2GB for each attachment in one release, and the size of a regular ISO installation image since Slackware 14.2 is around 3GB, the install iso is archived and splited into the size of a CD (700MB) in zip format.
 
 
 DIY
