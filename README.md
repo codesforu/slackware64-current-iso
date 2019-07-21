@@ -11,7 +11,7 @@ Link to download the latest release:
 Overview
 --------
 This repository  **irrgularly** updates and releases ISO installation image for  slackware64-current branch. Although this branch is not tagged stable, it is stable enough to fit general usage.  
-Since the mainstream hardware is already x86_64, the main focus will be on slackware64-current. If you want me to update it on demand or you need a x86_32 version, you can open an issue or sponsor me with a server so that I can make it automatic, as well as providing another mirror for Slackware. The best way is to do it yourself, just read the DIY section below.  
+As the mainstream hardware is already x86_64, the main focus will be on slackware64-current. If you want me to update it on demand or you need a x86_32 version, you can open an issue or sponsor me with a server so that I can make it automatic, as well as providing another mirror for Slackware. The best way is to do it yourself, just read the DIY section below.  
 The main reason and purpose for this repository to exist is because the latest Slackware release (14.2) uses an out-dated Linux kernel (4.4.14) which can hardly boot on new Intel CPUs (since 7th or 8th, not sure for which generation exactly), and I want to install Slackware on a computer with an 8th Intel CPU while Slackware has a current branch following stable new Linux kernel without official installation ISO image.  
 Repo created on 21. Jun. 2019.
 
